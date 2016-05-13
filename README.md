@@ -9,6 +9,7 @@ First run Traefik
 
 ```
 $ sudo ./traefik -c traefik.toml
+```
 
 Now start minimesos
 

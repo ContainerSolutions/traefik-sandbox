@@ -1,0 +1,16 @@
+{
+  "id": "nginx",
+  "mem": 128.0,
+  "cpus": 1,
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "nginx",
+      "network": "BRIDGE",
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  }
+}

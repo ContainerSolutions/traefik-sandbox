@@ -38,6 +38,22 @@ You can see that it forwards the request to the Mesos agents IP and port, howeve
 
 Because nothing is listening on port 31999 even though this port was assigned by Mesos, Traefik returns `Bad Gateway`.
 
+# Why not use Fabio? (by @frankscholten)
+
+Another load balancer is https://github.com/eBay/fabio. I prefer Traefik because it supports load balancing based on subdomains like
+
+```
+nginx.marathon.localhost
+```
+
+while fabio only supports route based load balancing like
+
+```
+marathon.localhost/nginx
+```
+
+I prefer the former because this could eventually be combined with DNS lookups or even with mDNS. See https://github.com/ContainerSolutions/minimesos-mdns
+
 # Conclusion
 
 Traefik can only be integrated with minimesos if this networking problem is solved. We can solve it if we use Project Calico. A difficulty for integrating Project Calico into minimesos is 
